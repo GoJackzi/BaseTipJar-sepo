@@ -14,7 +14,7 @@ import { Loader2, Gift, Wallet, User } from 'lucide-react'
 
 // No minimum or maximum tip amounts - users can tip any amount above 0
 
-const nftContractAddress = process.env.NEXT_PUBLIC_NFT_CONTRACT as `0x${string}` || ''
+const nftContractAddress = process.env.NEXT_PUBLIC_NFT_CONTRACT as `0x${string}` || '0xb8826389e04EA68f3fFBE3870E77Dfc5862fdf0F'
 
 export function TipJar() {
   const { address, chainId, isConnected } = useAccount()

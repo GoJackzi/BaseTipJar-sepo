@@ -19,7 +19,7 @@ A simple tip jar dApp built on Base mainnet that allows users to send ETH tips a
 
 ## Contract
 
-**Address**: `[DEPLOY YOUR CONTRACT TO MAINNET]`  
+**Address**: `0xb8826389e04EA68f3fFBE3870E77Dfc5862fdf0F`  
 **Network**: Base Mainnet  
 **Type**: ERC-721 NFT Contract
 
@@ -38,22 +38,17 @@ A simple tip jar dApp built on Base mainnet that allows users to send ETH tips a
    Add your configuration:
    ```
    NEXT_PUBLIC_CHAIN_ENV=mainnet
-   NEXT_PUBLIC_NFT_CONTRACT=your_deployed_contract_address
+   NEXT_PUBLIC_NFT_CONTRACT=0xb8826389e04EA68f3fFBE3870E77Dfc5862fdf0F
    NEXT_PUBLIC_ONCHAINKIT_API_KEY=your_api_key
    NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID=your_project_id
    ```
 
-3. **Deploy the smart contract**:
-   - Use Remix IDE or your preferred deployment tool
-   - Deploy `TipJarNFT-single-file.sol` to Base mainnet
-   - Update `NEXT_PUBLIC_NFT_CONTRACT` with your deployed address
-
-4. **Run the development server**:
+3. **Run the development server**:
    ```bash
    npm run dev
    ```
 
-5. **Open** [http://localhost:3000](http://localhost:3000)
+4. **Open** [http://localhost:3000](http://localhost:3000)
 
 ## Usage
 
