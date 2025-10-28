@@ -1,26 +1,26 @@
 # Base Tip Jar
 
-A simple tip jar dApp built on Base Sepolia that allows users to send ETH tips and receive NFT receipts.
+A simple tip jar dApp built on Base mainnet that allows users to send ETH tips and receive NFT receipts.
 
 ## Features
 
 - 💰 Send ETH tips with no minimum/maximum limits
 - 🎨 Receive unique NFT receipts for each tip
-- 🔗 Built on Base Sepolia testnet
+- 🔗 Built on Base mainnet
 - ⚡ Fast and gas-efficient transactions
 - 🎯 Clean, modern UI
 
 ## Tech Stack
 
 - **Frontend**: Next.js 14, React, TypeScript
-- **Blockchain**: Base Sepolia, OnchainKit, Wagmi
+- **Blockchain**: Base Mainnet, OnchainKit, Wagmi
 - **Smart Contract**: Solidity 0.8.30, ERC-721 NFT
 - **Styling**: Tailwind CSS, shadcn/ui
 
 ## Contract
 
-**Address**: `0xE888e71413a97f8269E39E6Cfe612E23c77C0Eeb`  
-**Network**: Base Sepolia  
+**Address**: `[DEPLOY YOUR CONTRACT TO MAINNET]`  
+**Network**: Base Mainnet  
 **Type**: ERC-721 NFT Contract
 
 ## Getting Started
@@ -37,23 +37,28 @@ A simple tip jar dApp built on Base Sepolia that allows users to send ETH tips a
    
    Add your configuration:
    ```
-   NEXT_PUBLIC_CHAIN_ENV=sepolia
-   NEXT_PUBLIC_NFT_CONTRACT=0xE888e71413a97f8269E39E6Cfe612E23c77C0Eeb
+   NEXT_PUBLIC_CHAIN_ENV=mainnet
+   NEXT_PUBLIC_NFT_CONTRACT=your_deployed_contract_address
    NEXT_PUBLIC_ONCHAINKIT_API_KEY=your_api_key
    NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID=your_project_id
    ```
 
-3. **Run the development server**:
+3. **Deploy the smart contract**:
+   - Use Remix IDE or your preferred deployment tool
+   - Deploy `TipJarNFT-single-file.sol` to Base mainnet
+   - Update `NEXT_PUBLIC_NFT_CONTRACT` with your deployed address
+
+4. **Run the development server**:
    ```bash
    npm run dev
    ```
 
-4. **Open** [http://localhost:3000](http://localhost:3000)
+5. **Open** [http://localhost:3000](http://localhost:3000)
 
 ## Usage
 
 1. **Connect your wallet** (MetaMask, Coinbase Wallet, etc.)
-2. **Switch to Base Sepolia** network (prompted automatically)
+2. **Switch to Base Mainnet** network (prompted automatically)
 3. **Enter tip amount** in ETH
 4. **Click "Send Tip"** and confirm transaction
 5. **Receive NFT receipt** in your wallet

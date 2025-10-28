@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { ConnectWallet } from '@coinbase/onchainkit/wallet'
 import { useAccount, useBalance, useWriteContract, useSwitchChain, useWaitForTransactionReceipt, useEstimateGas } from 'wagmi'
 import { parseEther, formatEther } from 'viem'
-import { baseSepolia } from 'wagmi/chains'
+import { base } from 'wagmi/chains'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -14,7 +14,7 @@ import { Loader2, Gift, Wallet, User } from 'lucide-react'
 
 // No minimum or maximum tip amounts - users can tip any amount above 0
 
-const nftContractAddress = process.env.NEXT_PUBLIC_NFT_CONTRACT as `0x${string}` || '0xE888e71413a97f8269E39E6Cfe612E23c77C0Eeb'
+const nftContractAddress = process.env.NEXT_PUBLIC_NFT_CONTRACT as `0x${string}` || ''
 
 export function TipJar() {
   const { address, chainId, isConnected } = useAccount()
@@ -50,7 +50,7 @@ export function TipJar() {
   })
 
   // Check if user is on the correct network
-  const isCorrectNetwork = chainId === baseSepolia.id
+  const isCorrectNetwork = chainId === base.id
 
   // Validate amount input
   const validateAmount = (value: string) => {
@@ -73,7 +73,7 @@ export function TipJar() {
 
   const handleSwitchNetwork = async () => {
     try {
-      await switchChain({ chainId: baseSepolia.id })
+      await switchChain({ chainId: base.id })
     } catch (error) {
       console.error('Failed to switch network:', error)
     }
@@ -163,7 +163,7 @@ export function TipJar() {
                   <div className="text-sm">
                     <p className="font-mono">{address?.slice(0, 6)}...{address?.slice(-4)}</p>
                     <p className="text-muted-foreground">
-                      {isCorrectNetwork ? 'Connected to Base Sepolia' : `Connected to Chain ID: ${chainId}`}
+                      {isCorrectNetwork ? 'Connected to Base Mainnet' : `Connected to Chain ID: ${chainId}`}
                     </p>
                   </div>
                 </div>
@@ -172,7 +172,7 @@ export function TipJar() {
                 {!isCorrectNetwork && (
                   <Alert>
                     <AlertDescription className="flex items-center justify-between">
-                      <span>Please switch to Base Sepolia network to continue</span>
+                      <span>Please switch to Base Mainnet to continue</span>
                       <Button 
                         onClick={handleSwitchNetwork}
                         size="sm"
